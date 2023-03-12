@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('comment');
             $table->time('period_begin');
             $table->time('period_end');
+            $table->string('days');
             $table->timestamps();
         });
     }
