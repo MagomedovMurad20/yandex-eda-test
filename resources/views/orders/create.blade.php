@@ -9,6 +9,12 @@
 </head>
 
 <body>
+    @foreach ($users as $user)
+        <h1>{{ $user->name }}</h1>
+    @endforeach
+    @foreach ($products as $product)
+        <h1>{{ $product->title }}</h1>
+    @endforeach
     <h1>Form</h1>
     <h1>>Users</h1>
     <h1>Products</h1>

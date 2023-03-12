@@ -20,7 +20,7 @@ class OrderController extends Controller
     {
         $users = User::all();
         $products = Product::all();
-        return view('orders.create', compact('users, products'));
+        return view('orders.create', compact('users', 'products'));
     }
 
     public function store(Request $request)

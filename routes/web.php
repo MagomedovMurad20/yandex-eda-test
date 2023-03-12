@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/order', [OrderController::class, 'index'])->name('order');
+Route::get('/create', [OrderController::class, 'create'])->name('create');
+Route::post('/create', [OrderController::class, 'store'])->name('store.create');
