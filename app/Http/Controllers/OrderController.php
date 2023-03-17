@@ -12,7 +12,9 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-        return view('orders.index', compact('orders'));
+        $products = Product::all();
+        $users = User::all();
+        return view('orders.index', compact('orders', 'products', 'users'));
     }
 
 
