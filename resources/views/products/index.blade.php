@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Orders</title>
+    <title>index products</title>
 </head>
 
-
 <body>
-    <h1>Order</h1>
-    <h1>User name</h1>
-    <h1>Product name</h1>
-    <h1>Period</h1>
-    <h1>Days</h1>
-    <h1>Comment</h1>
+    <h1>index products</h1>
+
+    <body>
+        <h1>Products</h1>
+        <h1>Product title</h1>
+    </body>
+
 </body>
 
 </html>

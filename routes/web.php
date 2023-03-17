@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/', function () {
 Route::get('/order', [OrderController::class, 'index'])->name('order');
 Route::get('/create', [OrderController::class, 'create'])->name('create');
 Route::post('/create', [OrderController::class, 'store'])->name('store.create');
+Route::resource('/product', ProductController::class);

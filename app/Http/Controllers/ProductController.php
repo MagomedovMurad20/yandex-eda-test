@@ -10,13 +10,13 @@ class ProductController extends Controller
 
     public function index()
     {
-        return response()->json([
-            '' => Product::get()
-        ]);
+        $products = product::all();
+        return view('products.index', compact('products'));
     }
 
     public function create()
     {
+        return view('products.create', compact('products'));
     }
 
 
@@ -38,12 +38,13 @@ class ProductController extends Controller
 
     public function show(Product $product)
     {
-        return response()->json(['post' => $product]);
+        return view('products.show', compact('product'));
     }
 
 
     public function edit(Product $product)
     {
+        return view('products.edit', compact('product'));
     }
 
 
