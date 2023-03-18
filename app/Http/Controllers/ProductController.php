@@ -10,12 +10,14 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = product::all();
+        $products = Product::all();
         return view('products.index', compact('products'));
+        return view('prof', compact('products'));
     }
 
     public function create()
     {
+        $products = Product::all();
         return view('products.create', compact('products'));
     }
 
@@ -27,12 +29,9 @@ class ProductController extends Controller
         $product->description = $request->description;
 
         $product->save();
+        return redirect()->route('product.create')->with('info', 'Товар добавлен');
 
-        return response()->json([
-            'message' => 'success',
-            'status' => '200',
-            'data' => $product,
-        ]);
+
     }
 
 

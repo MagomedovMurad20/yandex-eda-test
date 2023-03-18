@@ -32,7 +32,7 @@ class OrderController extends Controller
         $order->product_id = $request->product_id;
         $order->comment = $request->comment;
         $order->save();
-        return redirect()->route('order.index');
+        return redirect()->route('order')->with('info', 'Заказ добавлен');
     }
 
     /**

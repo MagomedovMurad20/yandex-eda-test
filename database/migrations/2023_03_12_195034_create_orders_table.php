@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('user_id');
-            $table->string('product_title');
+            $table->string('product_id');
             $table->string('comment');
-            $table->time('period_begin');
-            $table->time('period_end');
-            $table->string('days');
+            $table->time('period_begin')->nullable();
+            $table->time('period_end')->nullable();
+            $table->string('days')->nullable();
             $table->timestamps();
         });
     }

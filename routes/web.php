@@ -18,7 +18,6 @@ use App\Http\Controllers\ProductController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/order', [OrderController::class, 'index'])->name('order');
-Route::get('/create', [OrderController::class, 'create'])->name('create');
-Route::post('/create', [OrderController::class, 'store'])->name('store.create');
+
 Route::resource('/product', ProductController::class);
+Route::resource('/order', OrderController::class);
