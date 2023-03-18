@@ -36,16 +36,36 @@
         </div>
         <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
             <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-                <h1><a href="http://blog.stackfindover.com/" rel="dofollow">Stackfindover</a></h1>
+                <h1><a href="{{'/'}}" rel="dofollow">На главную</a></h1>
             </div>
             <div class="formbg-outer">
                 <div class="formbg">
                     <div class="formbg-inner padding-horizontal--48">
-                        <span class="padding-bottom--15">Sign in to your account</span>
-                        <form id="stripe-login" method="post" action="{{route('store.create')}}">
+                        <span class="padding-bottom--15">Создать заказ</span>
+                        <form id="stripe-login" method="post" action="{{route('order.store')}}">
                             @csrf
 
+                            <span>Имя клиента</span>
 
+                            <select class="form-control" name="user_id">
+
+                                @foreach ($users as $user)
+                                @if ($user)
+                                <option value="{{ $user->id }}">{{ $user->name}} {{$user->lastname}}</option>
+                                @endif
+                                @endforeach
+
+                            </select></br>
+                            <span>Название продукта</span>
+
+                            <select class="form-control" name="product_id">
+
+                                @foreach ($products as $product)
+                                @if ($product)
+                                <option value="{{ $product->id }}">{{ $product->title }}. {{$product->description}}</option>
+                                @endif
+                                @endforeach
+                            </select></br>
 
                             <div class="field padding-bottom--24">
                                 <div class="grid--50-50">
@@ -63,29 +83,9 @@
                                 <div class="grid--50-50">
                                     <label for="period_end">period_end</label>
                                 </div>
-                                <input type="date" name="period_begin">
+                                <input type="date" name="period_end">
                             </div>
-                            <span>Имя клиента</span>
 
-                            <select class="form-control" name="user_id">
-
-                                @foreach ($users as $user)
-                                    @if ($user)
-                                        <option value="{{ $user->id }}">{{ $user->name}} {{$user->lastname}}</option>
-                                    @endif
-                                @endforeach
-
-                            </select></br>
-                            <span>Название продукта</span>
-
-                            <select class="form-control" name="product_id">
-
-                            @foreach ($products as $product)
-                                    @if ($product)
-                                        <option value="{{ $product->id }}">{{ $product->title }}. {{$product->description}}</option>
-                                    @endif
-                                @endforeach
-                            </select></br>
                             </br>
                             <div class="field padding-bottom--24">
                                 <input type="submit" name="submit" value="Continue">

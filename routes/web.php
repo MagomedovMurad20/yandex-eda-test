@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +17,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [WelcomeController::class, 'index'])->name('/');
 Route::resource('/product', ProductController::class);
 Route::resource('/order', OrderController::class);
+Route::resource('/user', UserController::class);

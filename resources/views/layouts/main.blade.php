@@ -20,7 +20,7 @@
     </head>
 
     <body>
-    
+
         @yield('content');
 
     </body>
@@ -39,7 +39,7 @@
 
         body {
             min-height: 100%;
-            background-color: #ffffff;
+            background-color: ffffff;#
         }
 
         h1 {
