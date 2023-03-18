@@ -46,21 +46,7 @@
                             @csrf
 
 
-                            <select class="form-control" name="user_id">
-                                @foreach ($users as $user)
-                                @if ($user)
-                                <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                @endif
-                                @endforeach
-                            </select></br>
 
-                            <select class="form-control" name="product_id">
-                                @foreach ($products as $product)
-                                @if ($product)
-                                <option value="{{ $product->id }}">{{ $product->title }}</option>
-                                @endif
-                                @endforeach
-                            </select></br>
                             <div class="field padding-bottom--24">
                                 <div class="grid--50-50">
                                     <label for="comment">Comment</label>
@@ -79,7 +65,28 @@
                                 </div>
                                 <input type="date" name="period_begin">
                             </div>
+                            <span>Имя клиента</span>
 
+                            <select class="form-control" name="user_id">
+
+                                @foreach ($users as $user)
+                                    @if ($user)
+                                        <option value="{{ $user->id }}">{{ $user->name}} {{$user->lastname}}</option>
+                                    @endif
+                                @endforeach
+
+                            </select></br>
+                            <span>Название продукта</span>
+
+                            <select class="form-control" name="product_id">
+
+                            @foreach ($products as $product)
+                                    @if ($product)
+                                        <option value="{{ $product->id }}">{{ $product->title }}. {{$product->description}}</option>
+                                    @endif
+                                @endforeach
+                            </select></br>
+                            </br>
                             <div class="field padding-bottom--24">
                                 <input type="submit" name="submit" value="Continue">
                             </div>
@@ -88,6 +95,7 @@
 
                     </div>
                 </div>
+
                 <div class="footer-link padding-top--24">
                     <span>На главную<a href="/">На главную</a></span>
 
