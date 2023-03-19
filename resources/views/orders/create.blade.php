@@ -1,3 +1,4 @@
+{{--TODO СДЕЛАТЬ ДОБВАЛЕНИЕ ДАТ В БД --}}
 @extends('layouts.main')
 @section('content')
 <div class="login-root">
@@ -56,13 +57,24 @@
                                 @endforeach
 
                             </select></br>
+                            <span>Телефон клиента</span>
+
+                            <select class="form-control" name="user_id">
+
+                                @foreach ($users as $user)
+                                @if ($user)
+                                <option value="{{ $user->id }}">{{ $user->phone}}</option>
+                                @endif
+                                @endforeach
+
+                            </select></br>
                             <span>Название продукта</span>
 
                             <select class="form-control" name="product_id">
 
                                 @foreach ($products as $product)
                                 @if ($product)
-                                <option value="{{ $product->id }}">{{ $product->title }}. {{$product->description}}</option>
+                                <option value="{{ $product->id }}">{{ $product->title }} </option>
                                 @endif
                                 @endforeach
                             </select></br>
