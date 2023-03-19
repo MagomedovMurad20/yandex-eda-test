@@ -1,4 +1,10 @@
-<h2>Responsive Table</h2>
+@extends('layouts.main')
+@section('content')
+<div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+    <h1><a href="{{route('/')}}" rel="dofollow">Home</a></h1>
+</div>
+<h2>Orders Table</h2>
+
 @foreach($orders as $order)
     <div class="table-wrapper">
         <table class="fl-table">
@@ -152,3 +158,4 @@
         }
     }
 </style>
+@endsection

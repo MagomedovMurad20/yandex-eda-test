@@ -16,6 +16,8 @@
             <a href="{{ route('order.create') }}">Добавить заказ</a>
             <a href="{{ route('product.index') }}">Продукты</a>
             <a href="{{ route('product.create') }}">Добавить продукт</a>
+            <a href="{{ route('user.index') }}">Пользователи</a>
+            <a href="{{ route('user.create') }}">Добавить пользователя</a>
             <span class="line"></span>
         </nav>
     </header>
@@ -54,7 +56,7 @@
         background-image: linear-gradient(to bottom, #0009, transparent);
         color: #eee;
         font-family: 'Lato', sans-serif;
-        font-size: 62.5%;
+        font-size: 40.5%;
         padding: 0 20px;
         box-sizing: border-box;
     }
@@ -70,9 +72,9 @@
         border-radius: 8px;
         box-sizing: border-box;
         color: #666;
-        font-size: 1.6em;
+        font-size: 1em;
         line-height: 1.4em;
-        margin: 20px auto;
+        margin: 10px auto;
         margin-top: 80px;
         padding: 20px;
         width: 100%;
@@ -108,7 +110,7 @@
         display: flex;
         list-style: none;
         justify-content: center;
-        font-size: 2em;
+        font-size: 1em;
         font-weight: 300;
     }
 

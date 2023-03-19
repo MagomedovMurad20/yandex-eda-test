@@ -7,6 +7,9 @@
     <title>Show product</title>
 </head>
 <body>
+<div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+    <h1><a href="{{route('/')}}" rel="dofollow">Home</a></h1>
+</div>
 <h1>Show user</h1>
 </body>
 </html>
